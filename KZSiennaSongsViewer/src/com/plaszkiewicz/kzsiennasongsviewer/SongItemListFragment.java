@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.plaszkiewicz.kzsiennasongsviewer.dummy.SongsContent;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
 
 /**
  * A list fragment representing a list of SongItems. This fragment also supports

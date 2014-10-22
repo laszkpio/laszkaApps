@@ -1,4 +1,4 @@
-package com.plaszkiewicz.kzsiennasongsviewer.dummy;
+package com.plaszkiewicz.kzsiennasongsviewer.aom;
 
 import java.util.ArrayList;
 import java.util.HashMap;

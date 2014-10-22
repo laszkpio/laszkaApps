@@ -27,6 +27,7 @@ public class ZoomableTextView extends TextView {
 	
 	@Override
 	   public boolean onTouchEvent(MotionEvent ev) {
+		  // System.out.println("zoomable text view touch event");
 	      SGD.onTouchEvent(ev);
 	      return true;
 	   }

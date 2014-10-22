@@ -8,7 +8,7 @@
     <com.plaszkiewicz.kzsiennasongsviewer.CustomScrollView
     android:id="@+id/SCROLLER_ID"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:scrollbars="vertical"
     android:fillViewport="true">
     

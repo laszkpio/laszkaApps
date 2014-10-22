@@ -1,4 +1,4 @@
-package com.plaszkiewicz.kzsiennasongsviewer.dummy;
+package com.plaszkiewicz.kzsiennasongsviewer.aom;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
 
 import android.text.TextUtils;
 
-import com.plaszkiewicz.kzsiennasongsviewer.dummy.SongsContent.SongItem;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent.SongItem;
 
 public class SongsImporter {
 	

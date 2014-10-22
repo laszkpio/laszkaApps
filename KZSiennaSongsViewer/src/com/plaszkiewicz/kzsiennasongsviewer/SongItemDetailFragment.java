@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.plaszkiewicz.kzsiennasongsviewer.dummy.SongsContent;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
 
 /**
  * A fragment representing a single SongItem detail screen. This fragment is

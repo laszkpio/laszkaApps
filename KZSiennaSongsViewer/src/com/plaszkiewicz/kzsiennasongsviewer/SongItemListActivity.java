@@ -12,8 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.plaszkiewicz.kzsiennasongsviewer.dummy.SongsContent;
-import com.plaszkiewicz.kzsiennasongsviewer.dummy.SongsImporter;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsImporter;
 
 /**
  * An activity representing a list of SongItems. This activity has different
