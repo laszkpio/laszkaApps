@@ -15,6 +15,8 @@ public class CustomScrollView extends ScrollView {
 	public boolean onTouchEvent(MotionEvent ev) {
 	    return super.onTouchEvent(ev);
 	}
+	
+	// ciekawe jak by to zrobić żeby to skalowanie działało i na pustym fragmencie view i na textview
 
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
