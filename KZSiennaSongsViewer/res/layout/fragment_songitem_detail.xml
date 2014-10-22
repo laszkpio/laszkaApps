@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.plaszkiewicz.kzsiennasongsviewer.SongItemDetailFragment">
+
+    <com.plaszkiewicz.kzsiennasongsviewer.CustomScrollView
+    android:id="@+id/SCROLLER_ID"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+    
+<com.plaszkiewicz.kzsiennasongsviewer.ZoomableTextView   
+    android:id="@+id/songitem_detail"
+    style="?android:attr/textAppearanceLarge"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="16dp"
+    android:textIsSelectable="true"
+     />
+
+</com.plaszkiewicz.kzsiennasongsviewer.CustomScrollView>
+
+</LinearLayout>

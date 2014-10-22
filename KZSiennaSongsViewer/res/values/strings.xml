@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KZSienna Śpiewnik</string>
+    <string name="title_songitem_detail">Tekst piosenki</string>
+    <string name="inputSearchHint">Wyszukaj piosenkę...</string>
+
+</resources>
