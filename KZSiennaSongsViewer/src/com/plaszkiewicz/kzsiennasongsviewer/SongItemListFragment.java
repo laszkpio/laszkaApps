@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import bolts.Continuation;
+import bolts.Task;
 
+import com.ibm.mobile.services.data.IBMDataObject;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.SongCloudData;
 import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
 
 /**
@@ -22,6 +25,8 @@ import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
  * interface.
  */
 public class SongItemListFragment extends ListFragment {
+	
+	private static final String CLASS_NAME = SongItemListFragment.class.getSimpleName();
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -127,6 +132,40 @@ public class SongItemListFragment extends ListFragment {
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
 		mCallbacks.onItemSelected(mItem.id);
+		
+		createItem(mItem);
+	}
+	
+	public void createItem(SongsContent.SongItem mItem) {
+
+
+		SongCloudData scd = new SongCloudData();
+		scd.setName(mItem.title);
+		scd.setUserId("laszka");
+		scd.setNumberOfEntries(17);
+
+		// Use the IBMDataObject to create and persist the Item object.
+		scd.save().continueWith(new Continuation<IBMDataObject, Void>() {
+
+			@Override
+			public Void then(Task<IBMDataObject> task) throws Exception {
+				// Log if the save was cancelled.
+				if (task.isCancelled()){
+					Log.e(CLASS_NAME, "Exception : Task " + task.toString() + " was cancelled.");
+				}
+				 // Log error message, if the save task fails.
+				else if (task.isFaulted()) {
+					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
+				}
+
+				 // If the result succeeds, load the list.
+				else {
+					Log.i(CLASS_NAME, "Success : " + task.toString());
+				}
+				return null;
+			}
+
+		});
 	}
 
 	@Override
