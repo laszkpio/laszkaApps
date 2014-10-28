@@ -1,7 +1,5 @@
 package com.plaszkiewicz.kzsiennasongsviewer;
 
-import java.io.InputStream;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,11 +7,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 
-import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsContent;
-import com.plaszkiewicz.kzsiennasongsviewer.aom.SongsImporter;
+import com.plaszkiewicz.kzsiennasongsviewer.aom.AppIicationParameters;
 
 /**
  * An activity representing a list of SongItems. This activity has different
@@ -46,19 +42,10 @@ public class SongItemListActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_songitem_list);
 		
-		InputStream songsInputStream = this.getResources().openRawResource(R.raw.songs);
-		if (SongsContent.ITEMS.size() == 0){
-			SongsImporter songsImporter = new SongsImporter();
-			try {
-				songsImporter.importSongs(songsInputStream);
-			}
-			catch (Exception e){
-				System.err.println("Error when loading songs!");
-			}
-		}
+		AppIicationParameters.getInstance().initialize(this.getApplicationContext());
 		
+		setContentView(R.layout.activity_songitem_list);	
 
 		if (findViewById(R.id.songitem_detail_container) != null) {
 			// The detail container view will be present only in the
